@@ -51,7 +51,12 @@ public abstract class GitHubTask extends Task {
 	public GitHub connect() throws BuildException {
 		try {
 			if (github == null) {
-				github = GitHub.connect(tokenuser, token);
+				if (token != null) {
+					github = GitHub.connect(tokenuser, token);
+				} else {
+					//Read from ~/.github
+					github = GitHub.connect();
+				}
 			}
 			return github;
 		} catch (Exception e) {
