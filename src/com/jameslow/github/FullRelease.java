@@ -28,6 +28,7 @@ public class FullRelease extends CreateRelease {
 				String[] filesInSet = ds.getIncludedFiles();
 				for (String filename : filesInSet) {
 					File file = new File(dir,filename);
+					System.out.println(file.toString());
 					release.uploadAsset(file, MimeUtils.getMimeType(file));
 				}
 			}
