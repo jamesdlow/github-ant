@@ -10,7 +10,6 @@
 	<property name="tools" location="tools"/>
 		<property name="github" location="${tools}/github"/>
 		<property name="jarfile" location="${github}/${github.repo}.jar"/>
-		<property name="githublib" location="${github}/lib"/>
 
 		
 	<condition property="version.do">
@@ -20,7 +19,7 @@
 		<isfalse value="${build.doversion}"/>
 	</condition>
 
-	<fileset id="github-anttasks.jars" dir="${githublib}">
+	<fileset id="github-anttasks.jars" dir="${github}/lib">
 		<include name="**/*.jar"/>
 	</fileset>
 	<path id="github-anttasks.classpath">
