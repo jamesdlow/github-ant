@@ -95,14 +95,14 @@
 			repo="${github.repo}"
 			tokenuser="${github.tokenuser}"
 			token="${github.token}"
-			tag="${build.version}"
+			tag="${new.version}"
 			file="${release.zip.full}"/>-->
 		<github.fullrelease
 			repouser="${github.repouser}"
 			repo="${github.repo}"
 			tokenuser="${github.tokenuser}"
 			token="${github.token}"
-			tag="${build.version}">
+			tag="${new.version}">
 			<fileset dir="${dist}" casesensitive="yes">
 				<filename name="${release.zip}"/>
 			</fileset>

@@ -28,7 +28,7 @@ public class FullRelease extends CreateRelease {
 				String[] filesInSet = ds.getIncludedFiles();
 				for (String filename : filesInSet) {
 					File file = new File(dir,filename);
-					release.uploadAsset(file, Files.probeContentType(file.toPath()));
+					release.uploadAsset(file, MimeUtils.getMimeType(file));
 				}
 			}
 			return release.getHtmlUrl();

@@ -28,7 +28,7 @@ public class UploadAsset extends GitHubReleaseTask {
 			System.out.println(filepath);
 			File file = new File(filepath);
 			if (contenttype == null) {
-				contenttype = Files.probeContentType(file.toPath());
+				contenttype = MimeUtils.getMimeType(filepath);
 			}
 			return release.uploadAsset(file, contenttype);
 		} catch (Exception e) {
