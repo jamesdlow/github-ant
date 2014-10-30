@@ -103,13 +103,11 @@
 			token="${github.token}"
 			tag="${new.version}">
 			<fileset dir="${dist}" casesensitive="yes">
-				<!--<filename name="${release.zip}"/>-->
-				<include name="github-ant-0.1.0.zip"/>
-				<include name="github-ant-0.2.0.zip"/>
+				<filename name="${release.zip}"/>
 			</fileset>
 		</github.fullrelease>
 	</target>
-	
+
 	<target name="deploy" description="Deploy All To GitHub" depends="github">
 		<!-- At the moment deploy requires nothing else -->
 	</target>
