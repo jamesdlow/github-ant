@@ -112,6 +112,11 @@
 		<!-- At the moment deploy requires nothing else -->
 	</target>
 
+	<target name="copy" depends="build" description="Copy jar">
+		<copy file="${jarfile}" todir="../randr/tools/github/"/>
+		<copy file="${jarfile}" todir="../limegreen/tools/github/"/>
+	</target>
+
 	<target name="clean" description="Remove build and dist directories">
 		<delete dir="${build}"/>
 		<delete dir="${dist}"/>
